@@ -1,18 +1,19 @@
 # Python File Reader
 
-A Flask-based application to display and view contents of multiple file types within a directory. It scans a given directory for viewable files (e.g., Python, HTML, CSS, etc.) and renders them on a simple web interface.
+A Flask-based web application designed to quickly **copy and paste** the contents of files from a Python project. This tool allows you to easily explore your project’s directory, view supported files, and copy their contents with a single click.
 
-## Features
+## Key Features
 
-- Browse and view Python files, HTML, CSS, JavaScript, YAML, Markdown, and more.
-- Supports viewing of file contents within the browser.
-- Skips system directories such as `.venv`, `__pycache__`, `.git`, and `node_modules`.
-- Handles files with different encodings (UTF-8, Latin-1).
-- Simple, user-friendly interface built with Flask.
+- **Copy file contents**: View and copy individual files' contents (Python, HTML, CSS, JavaScript, and more).
+- **Copy all files**: Copy the content of all supported files in the project, excluding certain directories if desired.
+- **Easy directory navigation**: Browse your project’s directory structure in a simple, clean interface.
+- **Exclude directories**: Exclude specific directories from being copied using a checkbox filter.
+- **No need to open files manually**: Quickly view and copy the contents of any file, no need to open them in an editor.
 
-## File Types Supported
+## Supported File Types
 
-The application recognizes and displays the following file types:
+The application can view and copy the following file types:
+
 - `.py` (Python)
 - `.html` (HTML)
 - `.css` (CSS)
@@ -24,9 +25,9 @@ The application recognizes and displays the following file types:
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
+### 1. Clone the repository
+```bash
+git clone <repository-url>
 
     Navigate to the project folder:
 
