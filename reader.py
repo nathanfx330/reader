@@ -1,4 +1,4 @@
-# Save this code in the file named "reader.py"
+"reader.py"
 
 import os
 import html
@@ -7,8 +7,18 @@ from flask import Flask, render_template, abort, request, current_app
 app = Flask(__name__)
 
 TARGET_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
-VIEWABLE_EXTENSIONS = {'.py', '.html', '.css', '.js', ".csl", ".yml",".md",".txt"}
+VIEWABLE_EXTENSIONS = {'.as','.py', '.html', '.css', '.js', ".csl", ".yml",".md",".txt"}
 SCRIPT_PATH = os.path.abspath(__file__)
+
+def build_directory_tree(paths):
+    """Builds a nested dictionary tree from a list of directory paths."""
+    tree = {}
+    for path in paths:
+        parts = path.split('/')
+        node = tree
+        for part in parts:
+            node = node.setdefault(part, {})
+    return tree
 
 def get_all_viewable_files(base_dir):
     viewable_files = []
@@ -16,7 +26,7 @@ def get_all_viewable_files(base_dir):
 
     if not os.path.isdir(base_dir):
         current_app.logger.error(f"Target directory not found: {base_dir}")
-        return [], []
+        return [], set()
 
     abs_base_dir = os.path.abspath(base_dir)
 
@@ -40,9 +50,13 @@ def get_all_viewable_files(base_dir):
                 directory_name = os.path.dirname(relative_path).replace(os.sep, '/')
                 if directory_name == '.':
                     directory_name = ''
-
+                
+                # Add all parent directories of the current file's directory
                 if directory_name:
-                    viewable_directories.add(directory_name)
+                    parts = directory_name.split('/')
+                    for i in range(1, len(parts) + 1):
+                        viewable_directories.add('/'.join(parts[:i]))
+
 
                 safe_item_id = relative_path.replace('/', '__').replace('\\', '__').replace('.', '_')
 
@@ -79,11 +93,12 @@ def get_all_viewable_files(base_dir):
 @app.route('/')
 def show_all_files():
     all_files, all_directories = get_all_viewable_files(TARGET_DIRECTORY)
+    directory_tree = build_directory_tree(all_directories)
     return render_template(
         'reader.html',
         base_directory=TARGET_DIRECTORY,
         files=all_files,
-        directories=all_directories
+        directory_tree=directory_tree
     )
 
 # ... (Error handlers) ...
