@@ -103,6 +103,7 @@ A Flask-based web application for browsing and viewing multiple files from Pytho
 ## Supported File Types
 
 The application recognizes the following file extensions:
+- `.as` - Action Script
 - `.py` - Python
 - `.html` - HTML
 - `.css` - CSS
