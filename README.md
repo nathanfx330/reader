@@ -14,6 +14,7 @@ A Flask-based web application designed to quickly **copy and paste** the content
 
 The application can view and copy the following file types:
 
+- `.as` (Action Script)
 - `.py` (Python)
 - `.html` (HTML)
 - `.css` (CSS)
