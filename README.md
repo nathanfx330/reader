@@ -1,6 +1,6 @@
 # Python File Reader
 
-A Flask-based web application designed to quickly **copy and paste** the contents of files from a Python project. This tool allows you to easily explore your project’s directory, view supported files, and copy their contents with a single click.
+A Flask-based web application designed to quickly **copy and paste** the contents of files from a Python or Flutter project. This tool allows you to easily explore your project’s directory, view supported files, and copy their contents with a single click.
 
 ## Key Features
 
