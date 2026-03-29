@@ -7,7 +7,7 @@ from flask import Flask, render_template, abort, request, current_app
 app = Flask(__name__)
 
 TARGET_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
-VIEWABLE_EXTENSIONS = {'.as','.py', '.html', '.css', '.js', ".csl", ".yml",".md",".txt"}
+VIEWABLE_EXTENSIONS = {'.as','.py', '.html', '.css', '.js', ".csl", ".yml",".md",".txt",".dart"}
 SCRIPT_PATH = os.path.abspath(__file__)
 
 def build_directory_tree(paths):
