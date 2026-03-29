@@ -22,7 +22,7 @@ The application can view and copy the following file types:
 - `.yml` (YAML)
 - `.md` (Markdown)
 - `.txt` (Text)
-- '.dart' (Dart)
+- `.dart` (Dart)
 
 ## Installation
 
