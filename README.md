@@ -1,6 +1,5 @@
-# Python File Reader
-
-A Flask-based web application designed to quickly **copy and paste** the contents of files from a Python or Flutter project. This tool allows you to easily explore your project’s directory, view supported files, and copy their contents with a single click.
+Reader
+A Flask-based web application for browsing and viewing files across software projects. It lets you explore directory structures, inspect supported source files, and copy their contents directly from a simple web interface.
 
 ## Key Features
 
@@ -23,6 +22,7 @@ The application can view and copy the following file types:
 - `.yml` (YAML)
 - `.md` (Markdown)
 - `.txt` (Text)
+- '.dart' (Dart)
 
 ## Installation
 
