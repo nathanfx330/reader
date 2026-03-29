@@ -170,11 +170,3 @@ License
 This project is open-source and licensed under the MIT License.
 
 Note: This tool is particularly useful for inspecting code files in a project, especially when you have a large number of files spread across multiple directories.
-
-
-### Changes made:
-- Clarified that this is a tool to view files from a project.
-- Emphasized the project structure scanning and file viewing.
-- The example URL is now generic for local access (`http://127.0.0.1:5000/`).
-
-Let me know if there’s anything else you’d like to add!
